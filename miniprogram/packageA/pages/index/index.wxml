@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container-fluid pt-2">
+  <view class="form-group row justify-content-center">
+    <view class="col-10 positionRelay">
+      <form>
+        <input type="text" class="form-control" id="inputName" placeholder="请输入老师名称" value='{{inputValue}}' 	bindfocus="focusHandle" bindinput="focusHandle"/>
+
+        <text class="iconfont icon-guanbi resetIcon" id="reset" wx:if="{{resetShow}}" bindtap="resetClick"></text>
+      </form>
+
+    </view>
+
+    <view class="col-auto px-0">
+      <button class="btn btn-primary rounded-circle " size="mini" id="searchBtn" bindtap="onTap">
+        <text class="icon-chazhao iconfont "></text>
+      </button>
+    </view>
+  </view>
+
+  <canvas type="2d" canvas-id="can1" id="can" style="width: 345px; height: 716px;" bindtouchstart="getDetail">
+    <scroll-view  scroll-y='true' class="position-center {{lightArray.length > 0 ? 'active' :''}}" >
+      <van-cell-group >
+        <van-cell title="{{ item['姓名'] }}"
+                  value="{{ role === 2 ? '' : '预约'}}"
+                  label="{{ item['办公室'] }}"
+                  wx:for="{{ lightArray }}"
+                  wx:key="index"  is-link
+                  link-type="navigateTo"
+                  url="../message/index?name={{item['姓名']}}"
+                  center
+        />
+
+      </van-cell-group>
+    </scroll-view>
+  </canvas>
+
+  <view class="bg" style="background-image: url('{{ bg }}')"></view>
+</view>
+
+
+
+

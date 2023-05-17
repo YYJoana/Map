@@ -1,0 +1,23 @@
+/* pages/help/help.wxss */
+.top-item01{
+    height: 100vh;
+    background-color: white;
+    width: 100%;
+}
+.top-item02{
+  position: absolute;
+  display: block;
+  bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+  /* margin-top: 800rpx;  */
+  width: 90%;
+}
+.button01{
+    border-radius: 25rpx;
+    border: 1px solid #38f;
+    color: #38f;
+}
+.scroll-wrapper{
+    height: calc(100vh - 83px);
+}

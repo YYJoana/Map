@@ -1,0 +1,22 @@
+/* pages/myMessage/index.wxss */
+.titleInfo{
+    display: flex;
+    align-items: flex-start;
+}
+.titleInfo text{
+    margin-left: 20px;
+    font-size: 1rem;
+}
+.vancell .van-cell{
+    padding-bottom: 0px !important;
+}
+
+.group{
+    margin-top: 15px;
+}
+.van-tabs__line{
+    background-color: #38f!important;
+}
+.labelMessage{
+    font-size: 1rem;
+}

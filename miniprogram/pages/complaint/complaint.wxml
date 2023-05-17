@@ -1,0 +1,14 @@
+<view class="top-item01">
+  <view class="text-item01">请选择你要反馈的问题类型</view>
+  <view class="top-item02">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange" wx:for="{{array}}" wx:key="{{item.question1}}">
+      <van-checkbox name="{{item.num}}" checked-color="#38f" icon-size="18px">{{item.question1}}</van-checkbox>
+    </van-checkbox-group>
+  </view>
+  <view class="text-item01">请补充详细问题</view>
+
+  <textarea class="middle-item01"  placeholder="请输入不少于10个字的描述" bindinput="detailInput"></textarea>
+  <view class="text-item01">建议（选填）</view>
+  <input class="bottom-item01" placeholder="可以提出你宝贵的建议"  bindinput="connectInput"></input>
+  <button class="button-item01 {{isDisabled?'disabled':''}}" bindtap="onsubmit">提交</button>
+</view>

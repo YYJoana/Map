@@ -1,0 +1,53 @@
+<view style="width: 100%">
+  <van-tabs active="a" sticky>
+    <van-tab title="{{ role == '1' ? '已发送' : '未读' }}" name="a">
+      <van-cell-group inset wx:for="{{ messageArr }}" wx:key="{{ item.id }}">
+        <van-cell  value="{{ item['预约时间'] }}" bind:click="{{role == '1' ? '' : 'onSelect'}}"  use-label-slot class="vancell"  custom-class="group" data-id="{{ item.id }}">
+          <view  slot="title" class="titleInfo">
+            <van-image
+                round
+                width="2rem"
+                height="2rem"
+                src="{{ role == '1' ? item.teacehr_avatarUrl : item.student_avatarUrl  }}"
+            />
+            <text>{{ role == '1' ? item['教师姓名'] : item['学生姓名']}}</text>
+          </view>
+        </van-cell>
+        <van-cell use-label-slot bind:click="{{role == '1' ? '' : 'onSelect'}}" data-id="{{ item.id }}">
+          <view slot="label" class="labelMessage" >{{ item['预约信息'] }}</view>
+        </van-cell>
+      </van-cell-group>
+
+      <van-empty description="暂无留言" wx:if="{{ messageArr.length === 0 }}"/>
+    </van-tab>
+    <van-tab title="{{ role == '1' ? '已被查看' : '已读' }}" name="b">
+      <van-cell-group inset wx:for="{{ isReadMessageArr }}" wx:key="{{ item.id }}">
+        <van-cell  value="{{ item['预约时间'] }}"  use-label-slot class="vancell"  custom-class="group">
+          <view  slot="title" class="titleInfo">
+            <van-image
+                round
+                width="2rem"
+                height="2rem"
+                src="{{ role =='1' ? item.teacehr_avatarUrl : item.student_avatarUrl }}"
+            />
+            <text >{{ role == '1' ? item['教师姓名'] : item['学生姓名'] }}</text>
+          </view>
+        </van-cell>
+        <van-cell use-label-slot>
+          <view slot="label" class="labelMessage" >{{ item['预约信息'] }}</view>
+        </van-cell>
+      </van-cell-group>
+      <van-empty description="暂无留言" wx:if="{{ isReadMessageArr.length === 0 }}"/>
+
+    </van-tab>
+  </van-tabs>
+
+  <van-action-sheet
+      show="{{ show }}"
+      actions="{{ actions }}"
+      cancel-text="取消"
+      bind:close="onClose"
+      bind:cancel="onClose"
+      bind:select="selectRead"
+  />
+</view>

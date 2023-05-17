@@ -1,0 +1,81 @@
+/* pages/complaint/complaint.wxss */
+.top-item01 {
+    height: 100vh;
+    padding: 40rpx;
+    margin-top: 20rpx;
+    background-color: white;
+}
+
+.text-item01 {
+    font-weight: 600;
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.top-item02 {
+    width: 630rpx;
+    height: 300rpx;
+    background-color: rgb(244, 245, 247);
+    padding: 30rpx 20rpx;
+    border-radius: 30rpx;
+    margin-bottom: 70rpx;
+}
+
+.top-item03 {
+    box-sizing: border-box;
+    margin: 1rpx;
+}
+
+.van-checkbox-group {
+    height: 30px;
+}
+
+.middle-item01 {
+    width: 630rpx;
+    height: 250rpx;
+    background-color: rgb(244, 245, 247);
+    padding: 20rpx;
+    border-radius: 30rpx;
+    margin-bottom: 70rpx;
+}
+
+.middle-item01::placeholder{
+    font-size: 30rpx;
+    color: #ccc;
+}
+
+.image-item01 {
+    width: 100rpx;
+    height: 100rpx;
+    padding: 10rpx;
+    margin-top: 50rpx;
+    display: flex;
+}
+
+.bottom-item01 {
+    padding: 20rpx;
+    width: 630rpx;
+    height: 50rpx;
+    background-color: rgb(244, 245, 247);
+    border-radius: 30rpx;
+}
+.bottom-item01::placeholder{
+    font-size: 30rpx;
+    color: #ccc;
+}
+.button-item01 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    width: 90%;
+    border-radius: 25rpx;
+    text-align: center;
+    color: white;
+    background-color: #38f;
+
+}
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

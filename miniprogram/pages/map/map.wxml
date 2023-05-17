@@ -1,0 +1,9 @@
+<!--pages/map/map.wxml-->
+<map id="map" longitude="{{longitude}}"
+     latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}"
+     bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}"
+     bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location
+     style="width: 100%; height: {{view.Height}}px;">
+  <cover-view class="btn" bindtap="viewLine">查看路线</cover-view>
+
+</map>

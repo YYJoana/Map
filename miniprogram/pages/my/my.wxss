@@ -1,0 +1,65 @@
+/* pages/my/my.wxss */
+.top1-item{
+    padding: 40rpx;
+    width: 700rpx;
+    height: 200rpx;
+    position: relative;
+}
+.vatar-wrapper{
+    margin-top: 7px;
+}
+.top2-item{
+    display: flex;
+}
+.top3-item{
+    margin: 10rpx;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+
+}
+.top4-item{
+    padding: 30rpx;
+    border-top: 20rpx;
+    font-size:100prx;
+    font-weight: 900;
+    display: inline;
+}
+.Deng-top2-item{
+    display: flex;
+}
+.Deng-top4-item{
+    padding: 50rpx;
+    font-size:35rpx;
+    font-weight: 900;
+}
+.top5-item{
+    padding: 20rpx;
+    border-top: 10rpx;
+    color:#ccc
+}
+.item{
+    padding: 27px;
+    border: 100rpx;
+}
+.item-kong{
+    height: 20px;
+}
+.top{
+    height: 100%;
+    background: -webkit-linear-gradient(left,rgb(234, 246, 255),rgb(210, 237, 247),rgb(153, 220, 247));
+}
+.connect{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    text-indent: -9999px;
+}
+.Deng-top2-item .message-icon{
+    position: absolute;
+    top: 17px;
+    right: 30px;
+    font-size: 2rem!important;
+    color: #fff;
+}

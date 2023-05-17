@@ -1,0 +1,35 @@
+<!--packageA/pages/message/index.wxml-->
+<van-cell-group>
+  <van-field
+      value="{{ teacher['姓名'] }}"
+      label="老师姓名"
+      readonly
+  />
+  <van-field
+    value="{{ teacher['办公室'] }}"
+    label="老师办公室"
+    readonly
+/>
+  <van-field
+    value="{{ teacher['职务'] }}"
+    label="老师职位"
+    readonly
+/>
+  <van-field
+      wx:if="{{teacher['备注']}}"
+      value="{{ teacher['备注'] }}"
+      label="更多信息"
+      readonly
+  />
+  <van-field
+      value="{{ message }}"
+      label="留言"
+      type="textarea"
+      placeholder="请输入留言"
+      maxlength="100"
+      autosize="{{ sizeObj }}"
+      bind:change="onChange"
+      show-word-limit="{{true}}"
+  />
+</van-cell-group>
+<van-button  class="btn" round  color="#38f" bind:click="submit">提交留言</van-button>

@@ -1,0 +1,35 @@
+/* pages/exchangeImg/index.wxss */
+.van-grid-item__content.van-grid-item__content--center{
+    padding: 8px!important;
+}
+.btn-wrapper{
+    position: absolute;
+
+}
+.btn-wrapper.next{
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    /*transform: translateX(50%);*/
+}
+.active{
+    background-color: #38f!important;
+}
+.van-uploader__upload, .van-uploader__preview-image{
+    width: 110px!important;
+    height: 100px!important;
+    margin: 0!important;
+}
+/*.van-uploader__preview-image{*/
+/*    padding: 0 4px;*/
+/*}*/
+.van-uploader__preview{
+
+}
+.van-uploader__wrapper{
+    width: 110px!important;
+    height: 105px!important;
+}
+.active .van-uploader__wrapper{
+    background-color: #38f!important;
+}

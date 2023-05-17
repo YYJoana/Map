@@ -1,0 +1,11 @@
+<view class="top-item01">
+  <view class="top-item02">
+    <view class="middle-item01">{{name}}</view>
+    <view class="middle-item02" >{{job_title}}</view>
+    <view wx:if="{{counselor}}" class=" middle-item02-a">{{Remark}}</view>
+    <view class="middle-item03">{{office}}</view>
+    <image src="{{image}}" class="img-item01"></image>
+  </view>
+  <!-- <view class='container'>金兰</view> -->
+
+</view>

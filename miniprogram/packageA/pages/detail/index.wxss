@@ -1,0 +1,32 @@
+/* pages/detail/index.wxss */
+.a{
+    display: flex;
+    justify-content: space-between;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.line-inner{
+    display: flex;
+    align-items: center;
+}
+.green{
+    color:#26A843!important;
+}
+.unknown{
+    color: #2DABBD!important;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.van-collapse-item__content{
+    padding: 0!important;
+}
+.wrapper{
+    padding: 15px 15px;
+}

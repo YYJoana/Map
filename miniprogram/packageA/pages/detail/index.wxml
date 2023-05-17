@@ -1,0 +1,41 @@
+<!--pages/detail/index.wxml-->
+
+<van-collapse value="{{ activeNames }}" bind:change="onChange" >
+
+  <van-collapse-item wx:for="{{ array }}" wx:key="index" name="{{index}}" title="{{i['姓名']}}" wx:for-item="i">
+    <view  bindtap="showButton" class="wrapper">
+      <view class="line"   data-id="{{ i['姓名'] }}">
+        {{i['职务']}}
+        <view class="line-inner" wx:if="{{ i['时间'] === true }}">
+          <van-icon name="clock-o" size="18px"/>
+          <text style="margin-left: 5px;">有课</text>
+        </view>
+        <view class="line-inner unknown" wx:if="{{ i['时间'] === 'unknown' }}">
+          <van-icon name="info-o" size="18px"/>
+          <text style="margin-left: 5px;">未知</text>
+        </view>
+        <view class="line-inner green" wx:if="{{ i['时间'] === false }}">
+          <van-icon name="passed" size="18px"/>
+          <text style="margin-left: 5px;">没课</text>
+        </view>
+      </view>
+
+      <view>{{i['备注']}}</view>
+    </view>
+
+  </van-collapse-item>
+</van-collapse>
+
+<van-empty description="该办公室暂无老师" wx:if="{{ array.length === 0 }}"/>
+
+
+
+<van-loading   color="#1989fa" wx:if="{{ array === undefined }}" class="center">加载中...</van-loading>
+<van-action-sheet
+    show="{{ show }}"
+    actions="{{ actions }}"
+    cancel-text="取消"
+    bind:close="onClose"
+    bind:cancel="onClose"
+    bind:select="selectRead"
+/>

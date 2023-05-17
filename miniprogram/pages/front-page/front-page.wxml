@@ -1,0 +1,68 @@
+<!--pages/front-page/front-page.wxml-->
+<view class="top-wrapper">
+  <view class="top-title">Hey,{{timer}}</view>
+  <view class="top-text">{{timerMessage}}</view>
+</view>
+<view class="top1" bindtap="onLinkIndex">
+  <view class="title-text1" >办公室查询<view class="title-text3">精准定位</view></view>
+
+  <image src="../image/find.png" style="width: 40%; height: 100%;" ></image>
+</view>
+<view class="top2" bindtap="onLinkVr">
+  <view class="top2-item">
+    <view class="top2-item-inner"></view>
+    <view class="title-text2" >VR实景<image src="../image/VR_1.png" class="img-item01"></image></view>
+
+  </view>
+  <view class="top3-item" bindtap="onLinkThreeD">
+    <view class="top3-item-inner"></view>
+    <view class="title-text2">3D视图<image src="../image/icon_3D.png" class="img-item02"></image></view>
+  </view>
+</view>
+<hr/>
+<view>
+  <view class="cent1-item">
+    <view class="message-board {{!message1?'second':''}}" bindtap="Liu1">常见问题<image src="../image/active.png" alt="" class="mini-img" wx:if="{{message1}}"></image>
+    </view>
+    <view class="message-board {{message1?'second':''}}" bindtap="Read" style="padding-left: 25rpx">问题查询<image src="../image/active.png" alt="" class="mini-img next" wx:if="{{message2}}"></image></view>
+  </view>
+  <scroll-view class="scroll-wrapper" scroll-y='true' bindscrolltolower="loadMore" wx:if="{{message1}}">
+    <view  class="item01-answer" wx:for="{{array}}" wx:key="{{item.question}}">
+      <view class="item02-answer">
+        <view class="item01-text">Q：{{item.question}}</view>
+      </view>
+      <view class="item02-answer">
+        <view class="item02-text">A：{{item.answer}}</view>
+      </view>
+    </view>
+    <van-loading color="#1989fa" wx:if="{{array.length === 0}}" class="center">加载中...</van-loading>
+
+  </scroll-view>
+
+<view wx:if="{{message2}}" >
+<!--  <view style="margin-left: 25px; font-size: 23px">暂未上线!!</view>-->
+  <scroll-view
+      class="search-line"
+      scroll-y
+      bind:scroll="onScroll"
+      id="scroller" >
+    <van-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}" >
+      <van-search
+          value="{{ value }}"
+          input-align="center"
+          shape="round"
+          placeholder="请输入搜索关键词"
+          bind:search="onSearch"
+      ></van-search>
+    </van-sticky>
+    <van-cell-group  wx:for="{{searchResArr}}"  wx:key="{{item.id}}" inset>
+      <van-cell icon="question-o" title="{{item['问题']}}"  />
+      <van-cell icon="comment-o" title="{{item['答案']}}" />
+    </van-cell-group>
+    <van-empty image="search" style="text-align: center" description="暂未搜素结果" wx:if="{{showEmpty}}"/>
+
+
+  </scroll-view>
+
+</view>
+</view>

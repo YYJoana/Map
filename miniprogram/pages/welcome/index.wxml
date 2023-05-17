@@ -1,0 +1,80 @@
+<!--pages/welcome/index.wxml-->
+<view >
+  <van-steps steps="{{ steps }}" active="{{ active }}"  active-color="#38f" />
+  <view class="chose-statue" wx:if="{{ active === 0 }}">
+    <view class="header">
+      <view class="statue-title">请选择您的身份</view>
+      <view  class="statue-text">让我们为你提供更好的服务</view>
+    </view>
+
+    <van-radio-group value="{{ radio }}" bind:change="onChange" >
+      <van-cell-group >
+        <van-cell   clickable data-name="1" bind:click="onClick" custom-class="cell-wrapper">
+          <view  slot="title" class="student">
+            我是学生
+          </view>
+          <van-radio slot="right-icon" custom-class="inner-radio" name="1"  icon-size="22px"/>
+        </van-cell>
+        <van-cell   clickable data-name="2" bind:click="onClick" custom-class="cell-wrapper-teacher">
+          <view  slot="title" class="student">
+            我是老师
+          </view>
+          <van-radio slot="right-icon" custom-class="inner-radio" name="2" icon-size="22px" />
+        </van-cell>
+
+      </van-cell-group>
+    </van-radio-group>
+  </view>
+
+  <view wx:if="{{ active === 1 }}" class="chose-statue">
+    <view class="header">
+      <view class="statue-title">请您提供一些信息</view>
+      <view  class="statue-text">让我们为你提供更多的功能</view>
+    </view>
+    <van-cell-group>
+      <van-field
+          model:value="{{ name }}"
+          placeholder="请输入真实姓名"
+          label="真实姓名"
+          border="{{ false }}"
+      />
+      <van-cell title="用户头像和昵称"  label="用于基本的显示" border="{{ false }}" >
+        <button size="mini" bindtap="getUserIcon" wx:if="{{!userInfo.avatarUrl}}">点击获取</button>
+        <view class="image-box" wx:else>
+          <van-image
+              custom-class="avatarUrl-image"
+              width="50"
+              height="50"
+              fit="contain"
+              src="{{ userInfo.avatarUrl }}"/>
+          <view>已授权 | {{ userInfo.nickName }}</view>
+        </view>
+
+
+      </van-cell>
+    </van-cell-group>
+
+  </view>
+
+  <view wx:if="{{ active === 2 }}">
+    <van-grid column-num="3" border="{{ false }}" gutter="{{ 10 }}">
+      <van-grid-item use-slot wx:for="{{ 10 }}" wx:for-item="index" wx:key="index" >
+        <van-image
+            width="110"
+            height="100"
+            src="http://www.chenxv.link/imgTemp/{{ index + 1 }}_r.png"
+            class="{{ theme===index ? 'active': ''}}"
+            bindtap="chooseTheme"
+            data-id="{{ index }}"
+        />
+      </van-grid-item>
+    </van-grid>
+  </view>
+  <div class="btn-wrapper next">
+    <van-button  round  color="#38f" bind:click="nextStep" >{{ active<2 ? '下一步': '进入小程序'  }}<van-icon style="margin-left: 3px" name="arrow" /></van-button>
+  </div>
+<!--  <div class="btn-wrapper prv">-->
+<!--    <van-button  round   color="#38f" bind:click="nextStep" icon="arrow-left">上一步</van-button>-->
+<!--  </div>-->
+</view>
+

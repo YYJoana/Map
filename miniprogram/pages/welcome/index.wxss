@@ -1,0 +1,73 @@
+/* pages/welcome/index.wxss */
+.btn-wrapper .van-butter{
+    width: 250px;
+    height: 250px;
+}
+.btn-wrapper{
+    position: absolute;
+
+}
+.btn-wrapper.next{
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    /*transform: translateX(50%);*/
+}
+.btn-wrapper.prv{
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-150%);
+}
+
+.van-grid-item__content.van-grid-item__content--center{
+    padding: 8px!important;
+}
+.active{
+    background-color: #38f!important;
+}
+.statue-title{
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+.statue-text{
+    margin: 10px 0 20px;
+    font-size: 0.9rem;
+    color:#A6A6A6
+}
+.chose-statue{
+    background-color: #FEFEFE;
+}
+.header{
+    padding: 0 20px;
+}
+.cell-wrapper{
+    margin: 0 auto;
+    width: 90%!important;
+    border-radius: 15px;
+    height: 163px;
+    background-image: url('http://www.huangjinyu.xyz/imgTemp/学生.png');
+    margin-bottom: 15px;
+}
+.cell-wrapper-teacher{
+    margin: 0 auto;
+    width: 90%!important;
+    border-radius: 15px;
+    height: 163px;
+    background-image: url('http://www.huangjinyu.xyz/imgTemp/老师.png');
+}
+.student{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    font-size: 1.5rem;
+}
+.inner-radio{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+.avatarUrl-image{
+    margin-right: 12px;
+}

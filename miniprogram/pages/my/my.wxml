@@ -1,0 +1,50 @@
+<!--pages/my/my.wxml-->
+<view class="top">
+<view class="top1-item">
+
+  <view class="vatar-wrapper">
+      <view class="Deng-top2-item">
+        <image class="top3-item" src="{{userInfo.avatarUrl}}"></image>
+        <view class="Deng-top4-item">{{userInfo.nickName}}</view>
+        <van-icon name="chat-o" custom-class="message-icon" bind:click="linkToMyMessage" info="{{(messageArrLen===0 || role=='1') ? '' : messageArrLen }}"/>
+      </view>
+  </view>
+</view>
+<view wx:if="{{!DengLu}}">
+<van-cell
+    wx:if="{{role === 2}}"
+  is-link
+  title="我的二维码"
+  link-type="navigateTo"
+  url="/pages/QR_code/QR_code"
+/>
+</view>
+<van-cell
+  is-link
+  title="联系我们"
+>
+  <button open-type="contact" bindcontact="handleContact" class="connect">1</button>
+</van-cell>
+<!--  <button open-type="contact" bindcontact="handleContact">联系我们</button>-->
+<van-cell
+  is-link
+  title="帮助中心"
+  link-type="navigateTo"
+  url="/pages/help/help"
+/>
+  <van-cell
+      is-link
+      title="个性换肤"
+      link-type="navigateTo"
+      url="/pages/exchangeImg/index"
+  />
+
+<view class="item-kong"></view>
+<van-cell
+  is-link
+  title="投诉反馈"
+  link-type="navigateTo"
+  url="/pages/complaint/complaint"
+/>
+</view>
+

@@ -1,0 +1,12 @@
+<view class="top-item01">
+  <scroll-view class="scroll-wrapper" scroll-y='true' bindscrolltolower="loadMore">
+    <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+      <van-collapse-item wx:for="{{ array }}" wx:key="index" name="{{index}}" title="{{i.question}}" wx:for-item="i">
+        <view >{{i.answer}}</view>
+      </van-collapse-item>
+    </van-collapse>
+  </scroll-view>
+    <view class="top-item02">
+    <view class="bottom-item-03"><button class="button01" bindtap="linkToComplaint">我要反馈</button></view>
+    </view>
+</view>

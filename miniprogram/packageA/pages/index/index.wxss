@@ -1,0 +1,150 @@
+/**index.wxss**/
+@import "../assets/css/iconfont.wxss";
+@import "../assets/css/mybootStrap.wxss";
+@keyframes show {
+    0%{
+        opacity: 0;
+        transform: translate(-50%,-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+}
+.finded{
+    position: absolute;
+    font-size: 31px;
+    line-height: 31px;
+    transform: translate(-50%,-50%);
+    color: #dc3545;
+    font-weight: 600;
+    z-index: 2;
+    animation: show ease-in 1s;
+}
+#reset{
+    /*display: none;*/
+    z-index: 15;
+    font-size: 20px;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color:#515151
+}
+#imgBox{
+    position: absolute;
+    top:-100px;
+    left:25px;
+}
+.qrcodeCode{
+    position: absolute;
+    top:290px;
+    left:20px;
+}
+.qrcodeCode button{
+    border: 1px solid #ccc !important;
+}
+.qrcodeCode .text{
+    font-size: 12px;
+}
+.qrcodeCode button{
+    border: 1px solid #ccc !important;
+}
+.qrcodeCode .text{
+    font-size: 12px;
+}
+.btns{
+    position: fixed;
+    bottom: 100px;
+    right: 110px;
+    z-index: 1070;
+}
+.btns button{
+    position: absolute;
+}
+.btns a{
+    position: absolute;
+}
+#findBtn{
+    top: 0;
+    opacity: 0.5;
+    transition: all linear 0.15s;
+}
+#codeBtn{
+    top: 0;
+    opacity: 0.5;
+    transition: all linear 0.3s;
+}
+#mapBtn{
+    top:0;
+    opacity: 0.5;
+    transition: all linear 0.45s;
+}
+.jiantou{
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left:
+    .3em solid transparent;
+}
+.row{
+    display: flex;
+}
+
+/*page{*/
+/*    background-size: cover;*/
+/*    background-position: -160px 30px;*/
+/*}*/
+/*.resetIcon{*/
+/*    position: absolute;*/
+/*    transform: translate(-50%, -50%);*/
+/*    top: 50%;*/
+/*    right: -20px;*/
+/*    width: 15px;*/
+/*    height: 15px;*/
+/*    !*background: #000;*!*/
+/*    font-size: 15px;*/
+/*    color: #333333;*/
+/*}*/
+
+/*.finded.aninmtion{*/
+/*    opacity: 0.3;*/
+/*    transform: translate(-50%,-100%);*/
+/*}*/
+.stationBox{
+    position: absolute;
+    width: 345px;
+    height: 715px;
+    top: 0;
+    left: 0;
+    background-color: #008c8c;
+}
+.bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 785px;
+    width: 100%;
+    z-index: -10;
+    background-size: cover;
+}
+
+.position-center{
+    opacity: 0;
+    background-color: #F6F6F6;
+    position: absolute;
+    top: 165px;
+    left: 5px;
+    width: 245px;
+    height: 160px;
+    border-radius: 12px;
+    color: #000;
+    transition: all, 0.5s;
+}
+.position-center.active{
+    opacity: 1;
+}
